@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sudheer Vindula | Data & Analytics Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Sudheer Vindula - Data Analyst / Data Engineer / Business Analyst" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --card: #020617;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.15);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+      --radius-lg: 1.5rem;
+      --radius-md: 0.75rem;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #1e293b, #020617 45%, #020617);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      transition: all 0.18s ease-out;
+    }
+
+    .nav-links a:hover {
+      border-color: var(--accent-soft);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.3fr);
+      gap: 2.25rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .hero-main {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), #020617);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.25rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at 0% 0%, rgba(34, 197, 94, 0.22), transparent 50%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.9rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.8rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw, 2.7rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #f9fafb, #86efac);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 40rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tags span {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.5rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.18s ease-out;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at 0 0, #4ade80, #16a34a);
+      color: #020617;
+      box-shadow: 0 16px 40px rgba(34, 197, 94, 0.4);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+      box-shadow: 0 20px 50px rgba(34, 197, 94, 0.55);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent-soft);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .hero-aside {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .hero-card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.5rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-card h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-metrics {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-metric {
+      flex: 1 1 45%;
+    }
+
+    .hero-metric strong {
+      display: block;
+      font-size: 1.1rem;
+    }
+
+    .hero-metric span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .pill-row span {
+      padding: 0.18rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px dashed rgba(55, 65, 81, 0.9);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    section {
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1.6rem 1.7rem 1.7rem;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .section-heading h2 {
+      font-size: 1.1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .section-heading p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      max-width: 28rem;
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .about-text p + p {
+      margin-top: 0.75rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1.1rem;
+      font-size: 0.9rem;
+    }
+
+    .skill-card {
+      background: rgba(15, 23, 42, 0.94);
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    .skill-card h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+
+    .skill-card ul {
+      list-style: none;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .skill-card li {
+      margin-bottom: 0.25rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-md);
+      padding: 1.05rem 1.1rem 1.1rem;
+      border: 1px solid rgba(31, 41, 55, 0.95);
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+    }
+
+    .project-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .project-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .project-body {
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .project-list {
+      margin-left: 1.1rem;
+      margin-top: 0.45rem;
+      font-size: 0.88rem;
+    }
+
+    .project-list li {
+      margin-bottom: 0.2rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.45rem;
+      font-size: 0.78rem;
+    }
+
+    .project-tags span {
+      padding: 0.18rem 0.6rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+    }
+
+    .project-link {
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    .case-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.1rem;
+      font-size: 0.9rem;
+    }
+
+    .case-card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(31, 41, 55, 0.95);
+    }
+
+    .case-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .case-card h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .resume-content {
+      font-size: 0.9rem;
+      color: var(--text);
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .resume-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.35rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .cert-list {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    .cert-list li {
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 1.1rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-grid a {
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 2.25rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-aside {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 720px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero-main {
+        padding: 1.6rem 1.4rem;
+      }
+      section {
+        padding: 1.3rem 1.25rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">Sudheer Vindula</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#cases">Case Studies</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-main" id="about">
+        <div class="hero-kicker">Data & Analytics · SQL · Python · Power BI</div>
+        <h1 class="hero-title">
+          Hi, I’m <span>Sudheer</span> — I build reliable data pipelines and
+          decision-ready analytics.
+        </h1>
+        <p class="hero-subtitle">
+          Data Analyst / Data Engineer with 7+ years of experience turning raw data
+          into automated reporting, churn insights, and production-grade ETL.
+          Master’s in Information Systems (UNT), strong in SQL, Python, PySpark,
+          and modern BI (Power BI).
+        </p>
+        <div class="hero-tags">
+          <span>SQL · PySpark · Python</span>
+          <span>Power BI · DAX</span>
+          <span>Snowflake · Fivetran</span>
+          <span>Churn & SaaS Metrics</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View Selected Projects</a>
+          <a class="btn btn-ghost" href="#resume">Download Resume</a>
+        </div>
+      </div>
+
+      <aside class="hero-aside">
+        <div class="hero-card">
+          <h3>Snapshot</h3>
+          <div class="hero-metrics">
+            <div class="hero-metric">
+              <strong>7+ yrs</strong>
+              <span>in data & analytics roles</span>
+            </div>
+            <div class="hero-metric">
+              <strong>500+ hrs</strong>
+              <span>reporting effort automated</span>
+            </div>
+            <div class="hero-metric">
+              <strong>10M+ rows</strong>
+              <span>handled daily in ETL jobs</span>
+            </div>
+            <div class="hero-metric">
+              <strong>Exec-ready</strong>
+              <span>dashboards & KPIs delivered</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>Focus Areas</h3>
+          <div class="pill-row">
+            <span>Data Modeling & ETL</span>
+            <span>BI & Self-service Analytics</span>
+            <span>Churn & Cohort Analysis</span>
+            <span>Process Automation</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <main>
+      <!-- Skills -->
+      <section id="skills">
+        <div class="section-heading">
+          <h2>Skills & Stack</h2>
+          <p>
+            I combine data engineering fundamentals with strong analytical and
+            visualization skills to ship solutions that business teams actually use.
+          </p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Data & Analytics</h3>
+            <ul>
+              <li>SQL (CTEs, window functions, performance tuning)</li>
+              <li>Python (Pandas, NumPy, scikit-learn)</li>
+              <li>PySpark, distributed processing</li>
+              <li>Exploratory & diagnostic analytics</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>BI & Reporting</h3>
+            <ul>
+              <li>Power BI (DAX, data modeling, row-level security)</li>
+              <li>Interactive dashboards & executive reports</li>
+              <li>Report automation & self-service analytics</li>
+              <li>SaaS / churn / revenue KPI design</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Data Engineering</h3>
+            <ul>
+              <li>ETL / ELT pipelines (batch)</li>
+              <li>Snowflake, SQL Server, other RDBMS</li>
+              <li>Fivetran & connector-based ingestion</li>
+              <li>Data quality checks & reconciliation</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Other</h3>
+            <ul>
+              <li>Git / GitHub, CI-friendly workflows</li>
+              <li>Stakeholder communication & storytelling</li>
+              <li>Agile / Scrum collaboration</li>
+              <li>Documentation & hand-off assets</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <div class="section-heading">
+          <h2>Selected Projects</h2>
+          <p>
+            A focused set of projects across report automation, churn analytics,
+            and large-scale ETL — showing how I move from raw data to production
+            value.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Power BI Automation -->
+          <article class="project-card">
+            <div class="project-kicker">Project 01 · Reporting Automation</div>
+            <div class="project-title">
+              Power BI Automation for 500+ Enterprise Reports
+            </div>
+            <div class="project-meta">
+              Role: Data Analyst / BI Engineer · Stack: SQL, Power BI, DAX
+            </div>
+            <div class="project-body">
+              <p>
+                Re-engineered a legacy Excel-heavy reporting process into a
+                centralized Power BI solution, enabling business teams to self-serve
+                KPIs with governed data models.
+              </p>
+              <ul class="project-list">
+                <li>
+                  Consolidated disparate SQL queries & spreadsheets into a
+                  star-schema model powering 20+ standardized dashboards.
+                </li>
+                <li>
+                  Designed DAX measures for ARR, MRR, churn %, cohort retention,
+                  and product performance, aligning definitions across finance and
+                  operations.
+                </li>
+                <li>
+                  Implemented scheduled refresh, row-level security, and parameter
+                  driven views, reducing manual reporting time by ~500+ hours/year.
+                </li>
+                <li>
+                  Partnered with stakeholders to prioritize views, validate numbers,
+                  and embed dashboards into their daily workflows.
+                </li>
+              </ul>
+              <div class="project-tags">
+                <span>Power BI</span>
+                <span>DAX</span>
+                <span>Star schema</span>
+                <span>Reporting automation</span>
+              </div>
+              <!-- Optional GitHub link placeholder -->
+              <!-- <a class="project-link" href="https://github.com/your-handle/your-repo" target="_blank" rel="noopener">View repo / screenshots →</a> -->
+            </div>
+          </article>
+
+          <!-- Project 2: Churn Dashboard -->
+          <article class="project-card">
+            <div class="project-kicker">Project 02 · Churn & Cohorts</div>
+            <div class="project-title">
+              Customer Churn Segmentation & Retention Dashboard
+            </div>
+            <div class="project-meta">
+              Role: Data Analyst · Stack: SQL, Python, Power BI
+            </div>
+            <div class="project-body">
+              <p>
+                Built an end-to-end churn analytics solution to identify at-risk
+                customers, understand drivers of churn, and monitor retention
+                cohorts over time.
+              </p>
+              <ul class="project-list">
+                <li>
+                  Cleaned and modeled transactional & subscription data using SQL
+                  and Python, joining usage, payments, and support signals.
+                </li>
+                <li>
+                  Defined churn events, cohorts (by signup month), and retention
+                  curves; implemented cohort logic via SQL and DAX.
+                </li>
+                <li>
+                  Segmented customers by behavior (usage intensity, tenure, plan,
+                  payment patterns) to surface actionable retention plays.
+                </li>
+                <li>
+                  Delivered a Power BI dashboard with churn %, cohort views, LTV/CAC,
+                  and drill-downs for product, marketing, and CX teams.
+                </li>
+              </ul>
+              <div class="project-tags">
+                <span>Churn analysis</span>
+                <span>SQL</span>
+                <span>Power BI</span>
+                <span>Cohort retention</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: PySpark ETL -->
+          <article class="project-card">
+            <div class="project-kicker">Project 03 · Data Engineering</div>
+            <div class="project-title">
+              PySpark ETL Pipeline for 10M+ Daily Records
+            </div>
+            <div class="project-meta">
+              Role: Data Engineer · Stack: PySpark, SQL, Data Lake / Warehouse
+            </div>
+            <div class="project-body">
+              <p>
+                Designed and implemented a resilient ETL pipeline to ingest,
+                transform, and load high-volume event data into an analytics
+                warehouse.
+              </p>
+              <ul class="project-list">
+                <li>
+                  Built PySpark jobs to ingest raw files from object storage,
+                  apply schema validation, and handle late / malformed records.
+                </li>
+                <li>
+                  Implemented partitioning, incremental loads, and deduplication
+                  strategies to keep performance stable as volume grew beyond
+                  10M+ rows/day.
+                </li>
+                <li>
+                  Created curated fact & dimension tables for downstream BI and
+                  data science use cases, with clear SLAs on data freshness.
+                </li>
+                <li>
+                  Added basic data quality checks (row counts, null thresholds,
+                  business rule validations) and monitoring alerts.
+                </li>
+              </ul>
+              <div class="project-tags">
+                <span>PySpark</span>
+                <span>ETL</span>
+                <span>Data modeling</span>
+                <span>Data quality</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Case Studies -->
+      <section id="cases">
+        <div class="section-heading">
+          <h2>Case Studies</h2>
+          <p>
+            Short case-style narratives you can reference in interviews — focused
+            on the problem, approach, and impact.
+          </p>
+        </div>
+        <div class="case-list">
+          <article class="case-card">
+            <h4>Reporting · Automation</h4>
+            <h3>From ad-hoc Excel chaos to governed Power BI</h3>
+            <p>
+              <strong>Problem:</strong> Business users relied on manually updated
+              Excel files with inconsistent logic and numbers for management
+              reporting.
+            </p>
+            <p>
+              <strong>Approach:</strong> I interviewed key stakeholders, mapped
+              their existing reports, and reverse-engineered the underlying logic
+              into a central SQL model. I then built a star schema in Power BI,
+              defined standardized DAX measures, and rolled out a suite of
+              dashboards with row-level security.
+            </p>
+            <p>
+              <strong>Impact:</strong> Reduced manual effort by hundreds of hours
+              annually, established single-source-of-truth KPIs, and improved trust
+              in the numbers across finance and operations.
+            </p>
+          </article>
+
+          <article class="case-card">
+            <h4>Churn · Retention</h4>
+            <h3>Making churn drivers visible to non-technical teams</h3>
+            <p>
+              <strong>Problem:</strong> Leadership knew churn was an issue but had
+              no clear visibility into when and why customers were leaving.
+            </p>
+            <p>
+              <strong>Approach:</strong> I defined churn events and cohorts,
+              built retention curves, and enriched the data with segments like
+              usage behavior, ticket history, and plan type. I visualized this via
+              Power BI, including drill-downs and filters tailored to marketing and
+              CX teams.
+            </p>
+            <p>
+              <strong>Impact:</strong> Helped identify high-risk cohorts and
+              behaviors (e.g., low-usage first 60 days), enabling targeted
+              onboarding and retention campaigns.
+            </p>
+          </article>
+
+          <article class="case-card">
+            <h4>Data Engineering · Reliability</h4>
+            <h3>Stabilizing a fragile data pipeline</h3>
+            <p>
+              <strong>Problem:</strong> Existing scripts regularly failed on high
+              volume days, causing downstream reporting delays and manual fixes.
+            </p>
+            <p>
+              <strong>Approach:</strong> I refactored the pipeline into modular
+              PySpark jobs with better partitioning, error handling, and logging.
+              I introduced intermediate checkpoints, schema validation, and basic
+              data quality metrics exposed to the analytics team.
+            </p>
+            <p>
+              <strong>Impact:</strong> Improved pipeline reliability, reduced fire
+              drills for the data team, and gave stakeholders more confidence in
+              daily reports.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Resume & Certifications -->
+      <section id="resume">
+        <div class="section-heading">
+          <h2>Resume & Credentials</h2>
+          <p>
+            High-level view of my background. For full details, use the resume
+            download and LinkedIn links.
+          </p>
+        </div>
+        <div class="resume-content">
+          <div>
+            <strong>Current Focus:</strong> Data Analyst / Data Engineer / Business Analyst roles
+            where I can own pipelines, models, and business-facing dashboards end to end.
+          </div>
+          <div>
+            <strong>Education:</strong> M.S. in Information Systems &amp; Technology —
+            University of North Texas.
+          </div>
+          <div>
+            <strong>Experience (summary):</strong> 7+ years across data engineering,
+            BI, and analytics roles, including work on cloud-native pipelines,
+            Power BI automation, and SaaS/churn analytics.
+          </div>
+          <div class="resume-links">
+            <a class="badge" href="assets/Sudheer_Vindula_Resume.pdf" target="_blank" rel="noopener">
+              Download Resume (PDF)
+            </a>
+            <a class="badge" href="https://www.linkedin.com" target="_blank" rel="noopener">
+              View LinkedIn Profile
+            </a>
+            <a class="badge" href="https://github.com" target="_blank" rel="noopener">
+              View GitHub Projects
+            </a>
+          </div>
+          <div>
+            <strong>Certifications:</strong>
+            <ul class="cert-list">
+              <li>[Add your certifications here — e.g., cloud, BI, or data engineering]</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="section-heading">
+          <h2>Contact</h2>
+          <p>
+            Best way to reach me for roles, collaborations, or portfolio walkthroughs.
+          </p>
+        </div>
+        <div class="contact-grid">
+          <div>
+            <p>
+              I’m open to data-focused roles where I can own the journey from raw
+              data to insights — especially in product, SaaS, and operations-heavy
+              environments.
+            </p>
+            <p>
+              If you’d like a live walkthrough of any project, or want me to solve
+              a small data challenge as part of your process, I’m happy to do that.
+            </p>
+          </div>
+          <div>
+            <p><strong>Email:</strong> <a href="mailto:youremail@domain.com">youremail@domain.com</a></p>
+            <p><strong>Location:</strong> United States (Central Time)</p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/your-handle" target="_blank" rel="noopener">github.com/your-handle</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">linkedin.com/in/your-profile</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> Sudheer Vindula</span>
+      <span>Built with HTML &amp; CSS · Hosted on GitHub Pages</span>
+    </footer>
+  </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
